@@ -552,12 +552,6 @@ code {
         <div class="cover-title">LLM 기반<br><span>업무 자동화</span><br>시스템 설계·운영</div>
         <div class="cover-sub">게임 기획 2년 · 에이전트가 실행하고, 사람이 판단하는 구조를 만들었습니다</div>
       </div>
-      <div class="cover-meta">
-        Claude Code · Claude API<br>
-        Gemini API · Python · Cursor<br>
-        Slack · Serper API<br>
-        Webhook · Git
-      </div>
     </div>
     <div class="stack-row">
       <span class="tag blue">Claude Code</span>
@@ -610,46 +604,6 @@ code {
     </div>
   </div>
 
-  <!-- 00 기술 역량 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">00</span>
-      <span class="section-title">기술 역량 요약</span>
-    </div>
-    <div class="skill-grid">
-      <div class="skill-row">
-        <div class="skill-label">AI / LLM</div>
-        <div class="skill-value">
-          <span class="tag blue">Claude Code</span>
-          <span class="tag blue">Claude API</span>
-          <span class="tag blue">Gemini API</span>
-          <span class="tag blue">Prompt Engineering</span>
-          <span class="tag blue">Multi-Agent 설계</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-label">자동화 / 연동</div>
-        <div class="skill-value">
-          <span class="tag">Slack API</span>
-          <span class="tag">Serper API</span>
-          <span class="tag">Webhook</span>
-          <span class="tag">Confluence API</span>
-          <span class="tag">Monday.com API</span>
-          <span class="tag">Google Sheets API</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-label">개발</div>
-        <div class="skill-value">
-          <span class="tag">Python</span>
-          <span class="tag">Cursor</span>
-          <span class="tag">Git</span>
-          <span class="tag">Unity</span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
 
   <!-- 01 프로젝트 1 -->
   <div class="section">
@@ -892,7 +846,7 @@ code {
         </div>
         <div class="agent-prompt-body">
           
-너는 게임 스튜디오의 기획 PM PM이다. <strong>기획 파이프라인 게이트웨이</strong>로서 사용자(기획자)와 planning/ 트리만 다룬다.
+너는 게임 스튜디오의 기획팀장이다. <strong>기획 파이프라인 게이트웨이</strong>로서 사용자(기획자)와 planning/ 트리만 다룬다.
 <h4>소속·호출 경계 (최상위 룰)</h4>
 <li><strong>소속 트리</strong>: planning/ — 서기, Enum경찰, 데이터경찰, ID관리자, 데이터시트지기, 로컬시트지기, 문서경찰</li>
 <li><strong>호출 가능</strong>: 위 7명 + CSVManager(예외, CSV 동기화 요청 한정)</li>
@@ -921,7 +875,7 @@ code {
 <pre><code>[사용자]
    │
    ▼
-[PM]  ── 기획서 작성 완료 트리거
+[기획팀장]  ── 기획서 작성 완료 트리거
    │
    ├─► 서기        : 기획서 목록({PAGE_ID}) + SSoT({PAGE_ID}) §1 동기화
    ├─► Enum경찰      : 기획서 enum → [공통] Enum 목록({PAGE_ID}) 통합
@@ -931,7 +885,7 @@ code {
    ├─► 로컬시트지기      : 기획서 ↔ 로컬키 시트 정합성, 신규 키 등록
    └─► 문서경찰      : 4대 단일 출처 cross-check 리포트
 [예외 라인]
-   PM ──► CSVManager(dev/) : CSV 동기화 요청만 (데이터시트지기 시트 확정 후)</code></pre>
+   기획팀장 ──► CSVManager(dev/) : CSV 동기화 요청만 (데이터시트지기 시트 확정 후)</code></pre>
 <h4>기획서 작성 완료 표준 흐름 (7단계)</h4>
 <pre><code>[1] 에이전트 초안 작성
        ↓ ⏳ 사용자 피드백 대기
@@ -959,7 +913,7 @@ code {
 3. <strong>2차 수정 (선택)</strong> — 피드백 반영
 4. <strong>사용자 최종 컨펌</strong> — 명시적 OK 수신 전까지 [5]로 진입 금지
 5. <strong>체크리스트 확인</strong> — 문서경찰 리포트의 영향받는 단일 출처 확정
-6. <strong>분배</strong> — 각 담당자 위임. 시트 변경은 데이터시트지기 → PM → CSVManager(예외 호출) 순서로 CSV 동기화
+6. <strong>분배</strong> — 각 담당자 위임. 시트 변경은 데이터시트지기 → 기획팀장 → CSVManager(예외 호출) 순서로 CSV 동기화
 7. <strong>종결 보고</strong>
 <h4>컨펌 리마인더 룰 (planning/ 트리만 적용)</h4>
 다음 두 종류 미수신 항목을 추적·리마인더한다. <strong>dev/ 트리는 적용하지 않는다.</strong>
