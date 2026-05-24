@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포트폴리오 — AI_AGENT팀 인턴십 지원</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #0D1117;
+  --mid: #3D4451;
+  --soft: #6B7280;
+  --line: #E5E7EB;
+  --pale: #F8F9FA;
+  --blue: #1A56DB;
+  --blue-light: #EBF0FF;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --amber: #D97706;
+  --amber-light: #FFFBEB;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: 16px;
+  color: var(--mid);
+  background: #fff;
+  line-height: 1.75;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 40px 80px;
+}
+
+/* ── COVER ── */
+.cover {
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 52px;
+}
+
+.cover-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--soft);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+
+.cover-title {
+  font-size: 43px;
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.cover-title span { color: var(--blue); }
+
+.cover-sub {
+  font-size: 16px;
+  color: var(--soft);
+  margin-top: 12px;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+.cover-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--soft);
+  text-align: right;
+  line-height: 2.1;
+  flex-shrink: 0;
+}
+
+.stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--pale);
+  color: var(--mid);
+  border: 1px solid var(--line);
+}
+.tag.blue { background: var(--blue-light); color: var(--blue); border-color: #BFDBFE; }
+.tag.green { background: var(--green-light); color: var(--green); border-color: #A7F3D0; }
+
+/* ── SECTION ── */
+.section { margin-bottom: 52px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+/* ── SKILL GRID ── */
+.skill-grid {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-row { display: contents; }
+
+.skill-label {
+  background: var(--pale);
+  padding: 11px 16px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+
+.skill-value {
+  background: #fff;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-row:last-child .skill-label,
+.skill-row:last-child .skill-value { border-bottom: none; }
+
+/* ── PROJECT CARD ── */
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.project-head {
+  padding: 18px 24px;
+  background: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-index {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+
+.project-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.project-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+.project-body {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.block-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.block ul { list-style: none; }
+
+.block ul li {
+  font-size: 14px;
+  color: var(--mid);
+  padding: 3px 0 3px 14px;
+  position: relative;
+  line-height: 1.65;
+}
+
+.block ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--line);
+}
+
+.block ul li.sub {
+  padding-left: 26px;
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.block ul li.sub::before {
+  content: '·';
+  left: 12px;
+  color: var(--soft);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0 24px;
+}
+
+.result-row {
+  padding: 14px 24px;
+  background: var(--pale);
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.result-item { display: flex; flex-direction: column; gap: 3px; }
+
+.result-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.result-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.limit-block {
+  padding: 14px 24px;
+  background: var(--amber-light);
+  border-top: 1px solid #FDE68A;
+}
+
+.limit-block .block-title { color: var(--amber); }
+.limit-block ul li::before { color: #FCD34D; }
+
+/* ── SAMPLE BLOCKS ── */
+.sample-block {
+  padding: 24px 24px 16px;
+  border-top: 1px solid var(--line);
+}
+
+.sample-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+
+.tree {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.9;
+  background: #161B22;
+  color: #8B9BB4;
+  padding: 16px 18px;
+  border-radius: 8px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.ssot-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ssot-table th {
+  background: var(--pale);
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.ssot-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  color: var(--mid);
+  vertical-align: top;
+}
+
+.ssot-table tr:nth-child(even) td { background: var(--pale); }
+
+code {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 12px;
+  background: var(--pale);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  color: var(--blue);
+}
+
+/* ── WORKFLOW ── */
+.workflow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 8px 0;
+}
+
+.wf-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.wf-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #fff;
+  background: var(--blue);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.wf-label {
+  font-size: 12px;
+  color: var(--mid);
+  text-align: center;
+  max-width: 64px;
+  line-height: 1.3;
+}
+
+.wf-gate {
+  font-size: 12px;
+  color: var(--amber);
+  text-align: center;
+  max-width: 64px;
+  line-height: 1.3;
+}
+
+.wf-arrow {
+  font-size: 15px;
+  color: var(--line);
+  margin: 0 6px;
+  padding-bottom: 20px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--soft);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .page { padding: 32px 20px 60px; }
+  .cover-top { flex-direction: column; }
+  .cover-meta { text-align: left; }
+  .cover-title { font-size: 29px; }
+  .project-body { grid-template-columns: 1fr; }
+  .workflow { gap: 4px; }
+}
+
+    /* agent prompt */
+    .agent-prompt {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    .agent-prompt-head {
+      background: var(--ink);
+      padding: 12px 18px;
+    }
+    .agent-prompt-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: #60A5FA;
+      margin-bottom: 3px;
+    }
+    .agent-prompt-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+    .agent-prompt-body {
+      padding: 16px 20px;
+      background: #FAFAFA;
+      color: var(--mid);
+      line-height: 1.7;
+      max-height: 480px;
+      overflow-y: auto;
+    }
+    .agent-prompt-body h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 14px 0 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--line);
+    }
+    .agent-prompt-body h5 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      margin: 10px 0 4px;
+    }
+    .agent-prompt-body li {
+      margin-left: 16px;
+      margin-bottom: 2px;
+      font-size: 13px;
+    }
+    .agent-prompt-body pre {
+      background: #161B22;
+      color: #8B9BB4;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 12px;
+      overflow-x: auto;
+      margin: 8px 0;
+      white-space: pre-wrap;
+    }
+    .agent-prompt-body code {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 10.5px;
+      background: var(--pale);
+      padding: 1px 4px;
+      border-radius: 3px;
+      border: 1px solid var(--line);
+      color: var(--blue);
+    }
+    .agent-prompt-body pre code {
+      background: none;
+      border: none;
+      color: inherit;
+      padding: 0;
+    }
+    .agent-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin: 8px 0;
+    }
+    .agent-table th {
+      background: var(--pale);
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      text-align: left;
+      color: var(--ink);
+    }
+    .agent-table td {
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      color: var(--mid);
+    }
+    .agent-table tr:nth-child(even) td { background: var(--pale); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div style="text-align:center; font-size:13px; color:var(--soft); padding:8px 0 16px; border-bottom:1px solid var(--line); margin-bottom:20px;">
+    본 페이지는 PC 및 모바일 환경에서 모두 최적화되어 있습니다.
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <div class="cover-label" style="margin-bottom:0;">Portfolio · AI_AGENT팀 인턴십 지원</div>
+      <div style="font-family:'DM Mono', monospace; font-size:12px; color:var(--soft); text-align:right; line-height:1.9;">
+        문지현<br>bittenjihyun@gmail.com
+      </div>
+    </div>
+    <div class="cover-top">
+      <div>
+        <div class="cover-title">LLM 기반<br><span>업무 자동화</span><br>시스템 설계·운영</div>
+        <div class="cover-sub">게임 기획 2년 · 에이전트가 실행하고, 사람이 판단하는 구조를 만들었습니다</div>
+      </div>
+      <div class="cover-meta">
+        Claude Code · Claude API<br>
+        Gemini API · Python · Cursor<br>
+        Slack · Serper API<br>
+        Webhook · Git
+      </div>
+    </div>
+    <div class="stack-row">
+      <span class="tag blue">Claude Code</span>
+      <span class="tag blue">Claude API</span>
+      <span class="tag blue">Gemini API</span>
+      <span class="tag blue">Prompt Engineering</span>
+      <span class="tag blue">Multi-Agent 설계</span>
+      <span class="tag">Python</span>
+      <span class="tag">Cursor</span>
+      <span class="tag">Slack API</span>
+      <span class="tag">Serper API</span>
+      <span class="tag">Webhook</span>
+      
+    </div>
+  </div>
+
+  <!-- CAREER -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num" style="background:#F3F4F6;color:var(--mid);">EXP</span>
+      <span class="section-title">경력사항</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--line);">
+        <div style="background:var(--pale);padding:14px 16px;">
+          <div style="font-weight:700;font-size:14px;color:var(--ink);">스탠드에그</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--soft);margin-top:3px;">2025.09 – 2026.05</div>
+        </div>
+        <div style="padding:14px 16px;display:flex;flex-direction:column;gap:8px;">
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;">머지타운</div>
+            <div style="font-size:13px;color:var(--mid);">콘텐츠 기획 · 밸런스 기획</div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;">신규 프로젝트 (미공개)</div>
+            <div style="font-size:13px;color:var(--mid);">시스템 기획 · 밸런스 기획 · 콘텐츠 기획</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:160px 1fr;">
+        <div style="background:var(--pale);padding:14px 16px;">
+          <div style="font-weight:700;font-size:14px;color:var(--ink);">슈퍼플래닛</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--soft);margin-top:3px;">2024.02 – 2025.04</div>
+        </div>
+        <div style="padding:14px 16px;">
+          <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;">열렙!</div>
+          <div style="font-size:13px;color:var(--mid);">시스템 기획 · 콘텐츠 기획</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 00 기술 역량 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">기술 역량 요약</span>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-row">
+        <div class="skill-label">AI / LLM</div>
+        <div class="skill-value">
+          <span class="tag blue">Claude Code</span>
+          <span class="tag blue">Claude API</span>
+          <span class="tag blue">Gemini API</span>
+          <span class="tag blue">Prompt Engineering</span>
+          <span class="tag blue">Multi-Agent 설계</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">자동화 / 연동</div>
+        <div class="skill-value">
+          <span class="tag">Slack API</span>
+          <span class="tag">Serper API</span>
+          <span class="tag">Webhook</span>
+          <span class="tag">Confluence API</span>
+          <span class="tag">Monday.com API</span>
+          <span class="tag">Google Sheets API</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">개발</div>
+        <div class="skill-value">
+          <span class="tag">Python</span>
+          <span class="tag">Cursor</span>
+          <span class="tag">Git</span>
+          <span class="tag">Unity</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- 01 프로젝트 1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Claude Code 기반 멀티 에이전트 협업 시스템</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div>
+          <div class="project-index">PROJECT 01 · MAIN</div>
+          <div class="project-name">기획 업무 실행 구조를 AI 에이전트 팀으로 대체</div>
+        </div>
+        <div style="text-align:right;"><div class="project-badge">사내 운영 · 내부 프로젝트</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.35);margin-top:5px;">2026.03.09 – 2026.05.08</div></div>
+      </div>
+
+            <div class="project-body">
+        <div class="block">
+          <div class="block-title">배경 · 문제 정의</div>
+          <ul>
+            <li>기획서 작성부터 검수, 데이터 입력, 개발 현황 파악까지 기획 파이프라인 전반을 단독 운영</li>
+            <li>기획서·일정·데이터 문서가 Confluence·Monday·Git·스프레드시트에 분산 → 정합성 유지 공수 과다</li>
+            <li>단일 입력으로 모든 시스템이 동기화되지 않는 구조적 문제</li>
+            <li>기획자와 개발자가 동일 코드베이스에서 에이전트를 사용하면서 역할·권한 충돌 발생</li>
+          </ul>
+        </div>
+        <div class="block">
+          <div class="block-title">설계 · 구조</div>
+          <ul>
+            <li>에이전트를 <code>planning/</code>(8개) ↔ <code>dev/</code> 두 트리로 물리 분리</li>
+            <li>기획서 초안 작성·시트 데이터 입력을 에이전트가 담당 — 기획자는 검토·컨펌에만 집중</li>
+            <li>기획팀장이 단일 게이트웨이 — 모든 요청 중재·추적</li>
+            <li>단일 출처 7개를 전담 에이전트와 1:1 매핑</li>
+            <li>7단계 작업 및 컨펌 플로우 — 명시적 승인 없이 다음 단계 진행 불가</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="result-row">
+        <div class="result-item">
+          <div class="result-label">업무 운영</div>
+          <div class="result-value"><span style="color:#DC2626;">6인·3인</span> 분량 → <span style="color:#DC2626;">1인</span> 운영 체계</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">연동 시스템</div>
+          <div class="result-value">Confluence · Monday · Git · Sheets · Slack</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">에이전트</div>
+          <div class="result-value">planning/ 8개 직접 설계·운영</div>
+        </div>
+      </div>
+
+
+      <hr class="divider">
+
+      <!-- 트리 다이어그램 -->
+      <div class="sample-block">
+        <div class="sample-title">에이전트 구조 — planning/ 트리</div>
+        <div class="tree"><span style="color:#8B9BB4">┌─ 사용자(기획자)
+│
+▼</span>
+<span style="color:#60A5FA;font-weight:600">기획팀장</span>  <span style="color:#4B5563">← 게이트웨이 · 컨펌 리마인더 · 분배 추적</span>
+<span style="color:#374151">│
+├──</span> <span style="color:#34D399">서기</span>    <span style="color:#4B5563">기획서 목록 + SSoT §1</span>
+<span style="color:#374151">├──</span> <span style="color:#34D399">Enum경찰</span>     <span style="color:#4B5563">Enum 단일 출처 관리 (3단계 컨펌)</span>
+<span style="color:#374151">├──</span> <span style="color:#34D399">데이터경찰</span>    <span style="color:#4B5563">컬럼명·시트명 표기규칙</span>
+<span style="color:#374151">├──</span> <span style="color:#34D399">ID관리자</span>     <span style="color:#4B5563">ID 자릿수·대역·발급 대장</span>
+<span style="color:#374151">├──</span> <span style="color:#34D399">데이터시트지기</span>     <span style="color:#4B5563">Google 스프레드시트 ↔ 기획서 정합성</span>
+<span style="color:#374151">├──</span> <span style="color:#34D399">로컬시트지기</span>    <span style="color:#4B5563">로컬키 시트 정합성·신규 키 등록</span>
+<span style="color:#374151">└──</span> <span style="color:#34D399">문서경찰</span>    <span style="color:#4B5563">4대 단일 출처 교차 검수 리포트</span>
+</div>
+      </div>
+
+
+      <!-- 워크플로우 -->
+      <div class="sample-block">
+        <div class="sample-title">7단계 표준 워크플로우</div>
+        <div class="workflow">
+          <div class="wf-step">
+            <div class="wf-num">1</div>
+            <div class="wf-label">에이전트 초안 작성</div>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-step">
+            <div class="wf-num" style="background:var(--amber)">⏳</div>
+            <div class="wf-gate">피드백 대기</div>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-step">
+            <div class="wf-num">2</div>
+            <div class="wf-label">사용자 수정</div>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-step">
+            <div class="wf-num" style="background:var(--amber)">⏳</div>
+            <div class="wf-gate">컨펌 대기</div>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-step">
+            <div class="wf-num">3</div>
+            <div class="wf-label">최종 컨펌 ✓</div>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-step">
+            <div class="wf-num">4</div>
+            <div class="wf-label">공용 문서 갱신 체크</div>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-step">
+            <div class="wf-num">5</div>
+            <div class="wf-label">담당 에이전트 분배</div>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-step">
+            <div class="wf-num">6</div>
+            <div class="wf-label">전체 갱신 완료 종결</div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 실제 운영 흐름 -->
+      <div class="sample-block">
+        <div class="sample-title">실제 운영 흐름</div>
+
+        <div style="margin-bottom:16px;">
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--blue);margin-bottom:8px;">PHASE 1 — 기획서 작성 · 검수</div>
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--blue);font-size:12px;min-width:20px;">1</span>
+              <span>기획자가 PM에 기획서 작성 요청</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--blue);font-size:12px;min-width:20px;">2</span>
+              <span>관련 단일 출처 사전 확인 — Enum·표기규칙·ID 등 기존 규칙과 충돌 여부 체크</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--blue);font-size:12px;min-width:20px;">3</span>
+              <span>기획팀장이 규칙에 맞게 초안 생성 → 기획자 피드백 → 에이전트 수정</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--blue);font-size:12px;min-width:20px;">4</span>
+              <span>기획자 최종 컨펌 → 문서경찰이 4대 단일 출처 교차 검수 리포트 생성</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--blue);font-size:12px;min-width:20px;">5</span>
+              <span>리포트 기반으로 Enum경찰·ID관리자·로컬시트지기 등 각 담당 에이전트에 분배·처리</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--blue);font-size:12px;min-width:20px;">6</span>
+              <span>모든 단일 출처 갱신 완료 → 기획자 종결 컨펌</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--green);margin-bottom:8px;">PHASE 2 — 기획서 기반 데이터 작성</div>
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--green);font-size:12px;min-width:20px;">1</span>
+              <span>확정된 기획서 기반으로 데이터시트지기에 시트 데이터 작성 요청</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--green);font-size:12px;min-width:20px;">2</span>
+              <span>데이터시트지기가 컬럼 구조 설계 제안 → 기획자 컨펌</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;">
+              <span style="font-family:'DM Mono',monospace;color:var(--green);font-size:12px;min-width:20px;">3</span>
+              <span>데이터 입력 → 기획자 컨펌 → CSVManager에 CSV 동기화 위임</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SSoT 테이블 -->
+      <div class="sample-block">
+        <div class="sample-title">단일 출처(SSoT) 7개 매핑</div>
+        <table class="ssot-table">
+          <thead>
+            <tr><th>단일 출처</th><th>전담 에이전트</th><th>역할</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>SSoT · 기획서 목록</td><td><code>서기</code></td><td>기획서 트리 정리·동기화</td></tr>
+            <tr><td>Enum 목록</td><td><code>Enum경찰</code></td><td>string 타입 유효값 단일 관리</td></tr>
+            <tr><td>데이터 표기규칙</td><td><code>데이터경찰</code></td><td>데이터 표기 규칙 전반 정합성 검증·관리</td></tr>
+            <tr><td>ID 규칙</td><td><code>ID관리자</code></td><td>ID 체계 설계·발급 대장</td></tr>
+            <tr><td>데이터 테이블 목록</td><td><code>데이터시트지기</code></td><td>스프레드시트 ↔ 기획서 정합성</td></tr>
+            <tr><td>로컬키 시트</td><td><code>로컬시트지기</code></td><td>UI 문자열 키 등록·정합성</td></tr>
+            <tr><td>(교차 검수)</td><td><code>문서경찰</code></td><td>완료 시 4대 출처 자동 리포트</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- 단일 출처 문서 예시 -->
+      <div class="sample-block">
+        <div class="sample-title">단일 출처 문서 예시 — 데이터경찰 관리 문서 (데이터 표기규칙 §4)</div>
+        <p style="font-size:14px; color:var(--soft); margin-bottom:12px; line-height:1.7;">
+          아래는 <code>데이터경찰</code> 에이전트가 단일 출처로 관리한 데이터 표기규칙 문서의 일부입니다.
+          데이터 파일명(시트명)을 스탯 연산의 출처(Source) 식별자로 자동 인식하는 규칙을 정의합니다.
+        </p>
+        <div style="font-size:15px; font-weight:700; color:var(--ink); margin-bottom:6px;">4. 이름 기반 로직 처리</div>
+        <div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:6px;">4.1. 데이터 소스(Source) 기반 스탯 독립 곱연산</div>
+        <p style="font-size:14px; color:var(--mid); margin-bottom:10px; line-height:1.7;">
+          엔진은 <strong>데이터 파일명(또는 시트명)</strong>을 스탯 연산의 출처(Source) 식별자로 자동 인식합니다.
+        </p>
+        <p style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:6px;">규칙:</p>
+        <ul style="font-size:14px; color:var(--mid); margin-bottom:12px; padding-left:20px; line-height:1.8;">
+          <li>동일 시트(파일) 내의 같은 스탯 → <strong>합산</strong></li>
+          <li>서로 다른 시트(파일) 간의 같은 스탯 → <strong>독립 곱연산</strong></li>
+        </ul>
+        <p style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:6px;">예시:</p>
+        <div class="tree" style="margin-bottom:12px;">펫 시트에서 dmg_p 30%  →  펫_dmg_p 버킷
+탈것 시트에서 dmg_p 30%  →  탈것_dmg_p 버킷
+
+최종: 1.3(펫) × 1.3(탈것) = 1.69배
+(단순 합산 1.6보다 높은 효율)</div>
+        <p style="font-size:14px; color:var(--mid); margin-bottom:12px;">
+          <strong>파일명 형식:</strong> <code>Source_ContentName</code> (예: <code>Pet_Effect.csv</code> → Source: <code>Pet</code>)
+        </p>
+        <p style="font-size:12px; color:var(--soft); font-style:italic;">
+          ※ 실제 프로젝트 데이터 보호를 위해 파일명·시트명·콘텐츠명을 가상의 예시로 재구성했습니다.
+        </p>
+      </div>
+
+      <!-- 에이전트 프롬프트 샘플 -->
+      <div class="sample-block" style="padding:0; border-top:1px solid var(--line);">
+        <div style="padding:12px 24px 0;">
+          <div class="sample-title">에이전트 프롬프트 샘플 — 기획팀장</div>
+          <p style="font-size:13px; color:var(--soft); margin-bottom:12px; margin-top:8px;">실제 운영에 사용된 기획팀장 에이전트 프롬프트의 일부입니다. 내부 링크·ID·팀명은 익명화되었습니다.</p>
+        </div>
+        <div style="padding:0 24px 16px;">
+          <div class="agent-prompt">
+        <div class="agent-prompt-head">
+          <div class="agent-prompt-name">기획팀장</div>
+          <div class="agent-prompt-desc">게이트웨이 · 오케스트레이터</div>
+        </div>
+        <div class="agent-prompt-body">
+          
+너는 게임 스튜디오의 기획 PM PM이다. <strong>기획 파이프라인 게이트웨이</strong>로서 사용자(기획자)와 planning/ 트리만 다룬다.
+<h4>소속·호출 경계 (최상위 룰)</h4>
+<li><strong>소속 트리</strong>: planning/ — 서기, Enum경찰, 데이터경찰, ID관리자, 데이터시트지기, 로컬시트지기, 문서경찰</li>
+<li><strong>호출 가능</strong>: 위 7명 + CSVManager(예외, CSV 동기화 요청 한정)</li>
+<li><strong>호출 금지</strong>: dev/ 트리 일체 (CoreDev·ServerDev·OutgameDev·IngameDev·CSVManager의 CSV 동기화 외 요청)</li>
+<li>개발 파이프라인은 <strong>메인 Claude(개발자)</strong> 가 관할 — PM은 개입하지 않는다</li>
+<h4>역할 (기획 위주)</h4>
+<li><strong>Confluence 기획서 관리</strong>: 기획 문서 작성·수정·조회, 누락 기획 식별, SSoT 동기화</li>
+<li><strong>Google Sheets 데이터 시트 관리</strong>: 일정·진행 현황·기획 데이터 시트 관리 (시트 신규 작성은 데이터시트지기 위임)</li>
+<li><strong>로컬 기획 문서 관리</strong>: <code>Docs/</code> 하위 기획 관련 문서</li>
+<li><strong>현 구현 상황 파악 (조회 한정)</strong>: 코드·Monday.com 이슈를 읽고 기획 대비 구현 현황 분석</li>
+<li><strong>Monday.com 조회</strong>: 이슈·스프린트 현황 파악 (생성·상태 전환은 불가)</li>
+<li><strong>planning/ 트리 게이팅·중재</strong>: 기획서 작성 완료 흐름에서 4대 단일 출처 담당자에게 분배</li>
+<h4>권한 경계</h4>
+<strong>가능:</strong>
+<li>Confluence 페이지 생성·수정·조회</li>
+<li>Google Sheets 셀·시트 조회 (대규모 신규 작성은 데이터시트지기에게 위임)</li>
+<li>로컬 기획 문서(<code>Docs/</code> 등) 작성·수정</li>
+<li>Monday.com 보드/아이템 <strong>조회만</strong></li>
+<li>코드 <strong>조회만</strong> (구현 현황 파악용)</li>
+<strong>금지:</strong>
+<li>Monday.com 이슈 생성·수정·상태 전환·이관</li>
+<li>코드 작성·수정 (개발자 권한)</li>
+<li>dev/ 에이전트 작업 분배·오케스트레이션 (CSVManager CSV 동기화 요청만 예외)</li>
+수정이 필요한 사안이 발견되면 <strong>사용자에게 보고</strong>하고, 개발 작업은 사용자가 직접 메인 Claude에게 위임한다.
+<h4>planning/ 7인 협업 라인</h4>
+<pre><code>[사용자]
+   │
+   ▼
+[PM]  ── 기획서 작성 완료 트리거
+   │
+   ├─► 서기        : 기획서 목록({PAGE_ID}) + SSoT({PAGE_ID}) §1 동기화
+   ├─► Enum경찰      : 기획서 enum → [공통] Enum 목록({PAGE_ID}) 통합
+   ├─► 데이터경찰      : 데이터표기규칙({PAGE_ID}) 정합성 점검·갱신
+   ├─► ID관리자: 글로벌 ID 규칙 문서·발급 대장 운영
+   ├─► 데이터시트지기    : 기획서 ↔ 시트 정합성, 신규 시트 작성
+   ├─► 로컬시트지기      : 기획서 ↔ 로컬키 시트 정합성, 신규 키 등록
+   └─► 문서경찰      : 4대 단일 출처 cross-check 리포트
+[예외 라인]
+   PM ──► CSVManager(dev/) : CSV 동기화 요청만 (데이터시트지기 시트 확정 후)</code></pre>
+<h4>기획서 작성 완료 표준 흐름 (7단계)</h4>
+<pre><code>[1] 에이전트 초안 작성
+       ↓ ⏳ 사용자 피드백 대기
+[2] 사용자 피드백 / 문서 직접 수정
+       ↓
+[3] 에이전트 2차 수정 [선택]
+       ↓ ⏳ 사용자 최종 컨펌 대기
+[4] 사용자 최종 컨펌 ✓
+       ↓
+[5] 공용 문서 갱신 여부 파악 (체크리스트)
+       ├─ [SSoT ({PAGE_ID})]({CONFLUENCE_URL})              → 서기/CSVManager
+       ├─ [데이터표기규칙 ({PAGE_ID})]({CONFLUENCE_URL})      → 데이터경찰
+       ├─ [[공통] Enum 목록 ({PAGE_ID})]({CONFLUENCE_URL})   → Enum경찰
+       ├─ [ID 규칙 시안 ({PAGE_ID})]({CONFLUENCE_URL})         → ID관리자
+       ├─ [기획서 목록 ({PAGE_ID})]({CONFLUENCE_URL})         → 서기
+       ├─ [데이터 테이블 목록 ({PAGE_ID})]({CONFLUENCE_URL})   → 데이터시트지기
+       └─ [로컬키 시트]({SHEETS_URL}) → 로컬시트지기
+       ↓
+[6] 각 담당자에게 분배 + 처리 추적
+       ↓ ⏳ 분배 후 처리 미완 추적
+[7] 모든 갱신 완료 보고 → 사용자 종결 컨펌</code></pre>
+<h5>단계 세부</h5>
+1. <strong>초안</strong> — 문서경찰에게 4대 cross-check 위임 → 리포트 수령 (리포트 끝의 "공용 문서 갱신 체크리스트" 항목이 [5]단계 입력)
+2. <strong>사용자 피드백</strong> — 사용자 응답 수신·정리
+3. <strong>2차 수정 (선택)</strong> — 피드백 반영
+4. <strong>사용자 최종 컨펌</strong> — 명시적 OK 수신 전까지 [5]로 진입 금지
+5. <strong>체크리스트 확인</strong> — 문서경찰 리포트의 영향받는 단일 출처 확정
+6. <strong>분배</strong> — 각 담당자 위임. 시트 변경은 데이터시트지기 → PM → CSVManager(예외 호출) 순서로 CSV 동기화
+7. <strong>종결 보고</strong>
+<h4>컨펌 리마인더 룰 (planning/ 트리만 적용)</h4>
+다음 두 종류 미수신 항목을 추적·리마인더한다. <strong>dev/ 트리는 적용하지 않는다.</strong>
+<h5>추적 대상</h5>
+<li><strong>사용자 컨펌 대기</strong>: [1]→[2], [3]→[4] 게이트</li>
+<li><strong>담당자 처리 대기</strong>: [6] 분배 후 결과 미회신</li>
+<h5>리마인더 시점</h5>
+<li>사용자가 PM을 다시 호출할 때 <strong>응답 첫머리에 리마인더</strong></li>
+<li>사용자가 새 기획서 작업을 시작할 때 <strong>이전 미수신 컨펌부터 리포트</strong></li>
+<h5>리마인더 형식</h5>
+<pre><code>⏳ 미수신 컨펌·결과 N건:
+<li>[페이지명 (ID)](링크) — [4] 최종 컨펌 대기 (N일 경과)</li>
+<li>[페이지명 (ID)](링크) — [6] 담당자 결과 대기 (N일 경과)</code></pre></li>
+<h5>미수신 항목 메모 위치</h5>
+<li>PM은 진행 중 항목을 응답 끝에 "현재 대기 중" 섹션으로 기록</li>
+<li>사용자가 다음 호출 시 자동 인용</li>
+<h4>링크 필수 룰</h4>
+Confluence·Google Sheets·로컬 문서 언급 시 <strong>클릭 가능한 링크</strong>를 항상 함께 표기한다.
+<table class="agent-table"><tr><th>대상</th><th>형식</th></tr><tr><td>Confluence</td><td><code>[페이지명 (ID)]({CONFLUENCE_URL})</code></td></tr><tr><td>Google Sheets</td><td><code>[시트명](전체 URL)</code></td></tr><tr><td>로컬 파일</td><td><code>[경로](경로)</code></td></tr></table>
+링크 없는 ID·문서명 단독 언급은 금지.
+<h4>Confluence 기획서 현황</h4>
+기획서 현황은 <strong>기획서 목록</strong> 페이지(Confluence ID: {PAGE_ID})에서 관리한다.
+SSoT({PAGE_ID}) 하위 문서로, 문서명·하위문서·상태·비고가 정리되어 있다.
+<h4>Monday.com 보드 (조회 전용)</h4>
+워크스페이스: <strong>{COMPANY}</strong> (ID: {PAGE_ID})
+<table class="agent-table"><tr><th>보드</th><th>ID</th><th>설명</th></tr><tr><td>{PROJECT_A} 작업보드</td><td>{BOARD_ID}</td><td>{PROJECT_A}+{PROJECT_B} 업무 혼재</td></tr><tr><td>{PROJECT_A} BT</td><td>{BOARD_ID}</td><td>버그 트래킹</td></tr><tr><td>{PROJECT_B} 작업보드</td><td>{BOARD_ID}</td><td>{PROJECT_B}협동전 작업</td></tr><tr><td>{PROJECT_B} BT</td><td>{BOARD_ID}</td><td>{PROJECT_B}협동전 버그 트래킹</td></tr></table>
+이슈 현황 파악·필터링·요약은 가능. <strong>이슈 생성·상태 전환·이관은 사용자가 직접 수행</strong>한다.
+<h5>planning/ 변경 요청 취합</h5>
+planning/ 6명(문서경찰 제외)은 Monday.com 권한이 없다. Monday.com 변경(이슈 생성·상태 전환·이관 등)이 필요하면 <strong>PM에게 요청</strong>한다. PM은 요청 내용을 정리해 <strong>사용자에게 전달</strong>하고, 사용자가 직접 처리한다.
+<h4>작업 방식</h4>
+1. 사용자 요청 수신
+2. 작업 범위 식별 → planning/ 트리 게이팅 계획 수립
+3. 계획 보고 → 승인 후 진행
+4. 각 담당자에게 위임 → 결과 취합
+5. dev/ 영향 사안 발견 시 사용자에게 보고 (직접 위임 금지, CSVManager CSV 동기화만 예외)
+<h4>응답 스타일</h4>
+<li>한국어 존댓말</li>
+<li>작업 전 계획 먼저 보고, 승인 후 진행</li>
+<li>권한 밖 작업이 필요할 경우 즉시 보고하고 사용자 판단 요청</li>
+<li>dev/ 호출 금지 룰 위반 직전에는 자체 차단 후 사용자에게 위임 요청</li>
+<li><strong>응답 첫머리</strong>: 미수신 컨펌·결과가 있으면 리마인더부터 표시</li>
+<li><strong>응답 끝</strong>: 진행 중 대기 항목을 "현재 대기 중" 섹션으로 기록 (다음 호출 시 자동 인용)</li>
+<li>모든 문서 언급에 클릭 가능한 링크 동반 (링크 필수 룰)</li>
+
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- 02 프로젝트 2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">사내 슬랙봇 · 기사봇</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div>
+          <div class="project-index">PROJECT 02 · SUB</div>
+          <div class="project-name">사내 배포·실사용 자동화 봇 2종</div>
+        </div>
+        <div class="project-badge">사내 배포 · 실사용</div>
+      </div>
+
+      <div class="project-body">
+        <div class="block">
+          <div class="block-title">슬랙봇 — 캐릭터 챗봇</div>
+          <ul>
+            <li>사내 게임 캐릭터 말투로 대화하는 슬랙 챗봇</li>
+            <li>사내 공용 맛집 리스트 구글 스프레드시트에서 랜덤 추천</li>
+            <li>장기 맥락 유지를 위한 대화 히스토리 관리 — 원본·요약·발신자 ID 저장, 최근 n개 대화를 컨텍스트로 주입해 캐릭터 일관성 유지</li>
+          </ul>
+        </div>
+        <div class="block">
+          <div class="block-title">기사봇 — 뉴스 자동화</div>
+          <ul>
+            <li>게임업계 기사 매일 3개 자동 수집·전송</li>
+            <li>Serper API + 웹훅 연동</li>
+            <li>회사 빌드 PC에 상주 배포 (상시 운영)</li>
+            <li>Cursor + Python으로 직접 구현</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="result-row">
+        <div class="result-item">
+          <div class="result-label">배포</div>
+          <div class="result-value">사내 실사용</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">구현</div>
+          <div class="result-value">Cursor + Python</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">연동</div>
+          <div class="result-value">Slack API · Serper API · Webhook · Google Sheets</div>
+        </div>
+      </div>
+
+      <div class="sample-block">
+        <div class="sample-title">실제 동작 예시 — 맥락 기반 기능 트리거</div>
+        <p style="font-size:13px; color:var(--soft); margin-bottom:10px;">
+          "점심", "메뉴" 키워드가 포함되어 있어도 맥락상 추천 요청이 아님을 판단해 기능을 호출하지 않는 사례.
+          단순 키워드 매칭이 아닌 의도 파악 중심으로 프롬프트를 설계했습니다.
+        </p>
+        <img src="image_1.png" alt="슬랙봇 동작 예시" style="width:100%; max-width:560px; border-radius:8px; border:1px solid var(--line); display:block;">
+      </div>
+      <div class="sample-block">
+        <div class="sample-title">실제 동작 예시 — 기사봇</div>
+        <p style="font-size:13px; color:var(--soft); margin-bottom:12px;">
+          매일 오전 10시 게임업계 기사 3개를 자동 수집·요약해 전송합니다. API 오류 등 예외 상황 발생 시 별도 안내 메시지를 발송합니다.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <img src="image_2.png" alt="기사봇 정상 작동" style="width:100%; border-radius:8px; border:1px solid var(--line);">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-note">AI_AGENT팀 인턴십 지원 포트폴리오 · 본 사이트는 Claude와의 협업으로 설계·제작되었습니다</div>
+    <div class="footer-note">시스템 구조 및 에이전트명은 내부 정보 보호를 위해 익명화되었습니다</div>
+  </div>
+
+</div>
+</body>
+</html>
